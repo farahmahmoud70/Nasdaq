@@ -10,6 +10,7 @@ const Wrapper = styled.footer`
     justify-content: space-between;
     align-items: center;
     padding: 16px 8px;
+    margin-top: 10px;
 `
 
 const HWrapper = styled.div`
@@ -33,11 +34,11 @@ const Footer = () => {
 
             <HWrapper>
                 <NasdaqLogo src={nasdaqLogo} />
-                <Text align={'center'} color={'#FFFFFF'} pt={4} pleft={10} fs={16}>{'Nasdaq is a stock market app. It should show all stocks listed in Nasdaq exchange with their ticker, name, and details.'}</Text>
+                <Text align={'center'} color={'#FFFFFF'} pt={4} pleft={10} fs={14}>{'Nasdaq is a stock market app. It should show all stocks listed in Nasdaq exchange with their ticker, name, and details.'}</Text>
             </HWrapper>
 
             <HWrapper>
-                <Text align={'end'} color={'#FFFFFF'} pt={4} pleft={10} fs={16}>{'Farah Mahmoud'}</Text>
+                <Text align={'end'} color={'#FFFFFF'} pt={4} pleft={10} fs={14}>{'Farah Mahmoud'}</Text>
 
                 <Text align={'end'} color={'#FFFFFF'} pt={4} pleft={10} fs={14}>{`\u00a9 ${currentYear} Nasdaq. All Rights Reserved.`}</Text>
             </HWrapper>
