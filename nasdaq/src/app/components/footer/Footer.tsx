@@ -23,7 +23,9 @@ const HWrapper = styled.div`
 `
 
 const NasdaqLogo = styled.img`
-    width: 120px;`
+    width: 120px;
+    margin-left: 10px;
+    `
 
 
 const Footer = () => {
@@ -34,7 +36,7 @@ const Footer = () => {
 
             <HWrapper>
                 <NasdaqLogo src={nasdaqLogo} />
-                <Text align={'center'} color={'#FFFFFF'} pt={4} pleft={10} fs={14}>{'Nasdaq is a stock market app. It should show all stocks listed in Nasdaq exchange with their ticker, name, and details.'}</Text>
+                <Text align={'center'} color={'#FFFFFF'} pt={4} pleft={0} fs={14}>{'Nasdaq is a stock market app. It should show all stocks listed in Nasdaq exchange with their ticker, name, and details.'}</Text>
             </HWrapper>
 
             <HWrapper>
