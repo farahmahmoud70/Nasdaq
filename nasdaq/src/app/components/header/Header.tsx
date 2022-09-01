@@ -12,6 +12,8 @@ const Wrapper = styled.header`
     align-items: center;
     padding: 8px;
     box-shadow: 0px 1px 3px grey;
+    z-index:3;
+    background-color:#D9E8F5;
 `
 
 const NasdaqLogo = styled.img`
