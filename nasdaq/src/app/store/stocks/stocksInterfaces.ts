@@ -1,16 +1,19 @@
 // stocksState interface
-export type StateStocks = {
+export interface StateStocks {
     ticker: string
     fullName: string
 }
-export type State = {
+export interface State {
     stocks: StateStocks[]
-    isLoading: boolean
+    isLoading: boolean,
+    nextUrl?: string
+    isStocksNextUrl: boolean
 }
 
 // stocksActions interface
 export interface ActionStocks {
     data: {
         results: Array<{ ticker: string; name: string }>
+        next_url?:string
     }
 }

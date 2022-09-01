@@ -1,4 +1,4 @@
 import polygonHandler from '../../handlers/stocksApiHandler';
 
-export const getStocksApi = () =>
-    polygonHandler.getStocks();
+export const getStocksApi = (nextUrl?:string) =>
+    polygonHandler.getStocks(nextUrl);
