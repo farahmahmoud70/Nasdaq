@@ -2,14 +2,9 @@ import styled from 'styled-components';
 
 
 interface CardInterface {
-    stock: { ticker: string, fullName: string, }
+    stock: { ticker: string, fullName: string},
+    onCardClick: (ticker: string) => void; 
 }
-
-const CardWrapper = styled.div`
-margin: 10px;
-display: flex;
-align-items: center;
-`
 
 const CardContentWrapper = styled.div`
 width: 200px;
@@ -49,6 +44,7 @@ background: transparent;
     color: #F26101;
     font-weight: bold;
     cursor: pointer;
+    text-decoration: underline;
     &:hover {
         color: #304269;
     }
@@ -64,39 +60,39 @@ const ContentWrapper = styled.div`
 color: #304269;
 font-size: 12px;
 margin-top:4px;
+white-space: nowrap;
+overflow: hidden;
+text-overflow: ellipsis;
 `
 
 
-const Card = ({ stock }: CardInterface) => {
+const Card = ({ stock, onCardClick }: CardInterface, ) => {
 
-    const onShowDetailsClick=()=>{
-        return true
+    const onShowDetailsClick = () => {
+        onCardClick?.(stock.ticker)
     }
     return (
-        <CardWrapper>
+            <CardContentWrapper>
+                <StockInfoWrapper>
+                    <div>
 
-        <CardContentWrapper>
-            <StockInfoWrapper>
-                <div>
+                        <TitleWrapper>{'Thicker'}</TitleWrapper><ContentWrapper title={stock.ticker}>{stock.ticker}</ContentWrapper>
+                    </div>
 
-                    <TitleWrapper>{'Thicker'}</TitleWrapper><ContentWrapper>{stock.ticker}</ContentWrapper>
-                </div>
+                    <div>
 
-                <div>
+                        <TitleWrapper>{'Full Name'}</TitleWrapper><ContentWrapper title={stock.fullName}>{stock.fullName}</ContentWrapper>
+                    </div>
 
-                    <TitleWrapper>{'Full Name'}</TitleWrapper><ContentWrapper>{stock.fullName}</ContentWrapper>
-                </div>
+                </StockInfoWrapper>
 
-            </StockInfoWrapper>
+                <ShowDetailsBtnWrapper>
+                    <ShowDetailsBtn onClick={onShowDetailsClick}>
+                        {'Show more details..'}
+                    </ShowDetailsBtn>
+                </ShowDetailsBtnWrapper>
 
-            <ShowDetailsBtnWrapper>
-                <ShowDetailsBtn onClick={onShowDetailsClick}>
-                    {'Show more details..'}
-                </ShowDetailsBtn>
-            </ShowDetailsBtnWrapper>
-
-        </CardContentWrapper>
-        </CardWrapper>
+            </CardContentWrapper>
     );
 }
 export default Card;
