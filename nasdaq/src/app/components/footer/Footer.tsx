@@ -9,22 +9,22 @@ const Wrapper = styled.footer`
     display flex;
     justify-content: space-between;
     align-items: center;
-    padding: 16px 8px;
-    margin-top: 10px;
+    padding: 10px 8px;
 `
 
 const HWrapper = styled.div`
     width: 100%;
-    height:100%;
+    height:auto;
     display flex;
     flex-direction:column;
     justify-content: center;
     align-items: space-between;
+    padding: 8px 0px;
 `
 
 const NasdaqLogo = styled.img`
     width: 120px;
-    margin-left: 10px;
+    margin-left: 12px;
     `
 
 
