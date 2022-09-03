@@ -1,5 +1,5 @@
+// libs
 import styled from 'styled-components';
-
 
 interface CardInterface {
     stock: { ticker: string, fullName: string},

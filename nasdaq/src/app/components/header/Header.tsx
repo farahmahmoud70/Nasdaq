@@ -1,5 +1,10 @@
+
+// libs
 import styled from 'styled-components';
-import nasdaqLogo from '../../style/images/nasdaq.png';
+
+// UI & Components
+import nasdaqLogo from 'app/style/images/nasdaq.png';
+
 const Wrapper = styled.header`
     width: 100%;
     background-color: #FFFFFF;

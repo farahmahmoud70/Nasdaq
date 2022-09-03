@@ -1,3 +1,4 @@
+// libs
 import { useEffect, useRef, useState } from 'react';
 import styled from 'styled-components';
 
@@ -12,7 +13,7 @@ export type Props = {
     isLoading: boolean;
     hasMoreData: boolean;
     loadOnMount: boolean;
-    children: any
+    children?: any
 };
 
 const isBottom = (ref: React.RefObject<HTMLDivElement>) => {

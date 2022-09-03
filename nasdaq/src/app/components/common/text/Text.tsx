@@ -1,5 +1,7 @@
-import React from 'react';
+// libs
 import styled from 'styled-components';
+
+
 const TextStyle = styled.div<{ bold?: boolean, color: string, align: string, pt: number, pleft: number, fs: number }>`
     ${props => props.bold ? 'font-weight: bold' : null};
     color: ${props => props.color};
@@ -10,7 +12,7 @@ const TextStyle = styled.div<{ bold?: boolean, color: string, align: string, pt:
 `
 
 interface TextInterface {
-    children: any, bold?: boolean, color: string, align: string, pt: number, pleft: number, fs: number,
+    children?: any, bold?: boolean, color: string, align: string, pt: number, pleft: number, fs: number,
 }
 
 

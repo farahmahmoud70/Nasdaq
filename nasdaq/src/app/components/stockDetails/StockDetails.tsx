@@ -1,5 +1,10 @@
-import { useAppState } from 'app/store';
+// libs
 import styled from 'styled-components';
+
+// overmind
+import { useAppState } from 'app/store';
+
+// UI & components
 import nasdaqLogo from 'app/style/images/nasdaq.png'
 
 const Wrapper = styled.div`
