@@ -1,20 +1,19 @@
-//libs
+// libs
 import ReactDOM from 'react-dom/client';
 import { createOvermind } from 'overmind';
 import { Provider } from 'overmind-react';
 import { BrowserRouter } from 'react-router-dom';
 
-//overmind
-import { config } from '../src/app/store/index';
+// overmind
+import { config, devTool } from '../src/app/store/index';
 
 import reportWebVitals from './reportWebVitals';
 
-//Components & UI
+// Components & UI
 import App from './App';
 import './index.css';
 
-
-const overmind = createOvermind(config)
+const overmind = createOvermind(config, devTool);
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement

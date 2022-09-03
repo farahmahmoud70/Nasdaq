@@ -21,10 +21,21 @@
   "plugins": ["react", "react-hooks", "@typescript-eslint", "prettier"],
   "rules": {
     "react/react-in-jsx-scope": "off",
-    "react/jsx-no-literals": "error",
     "spaced-comment": "warn",
     "quotes": ["error", "single"],
-    "no-duplicate-imports": "error"
+    "no-duplicate-imports": "error",
+    "prettier/prettier": [
+      "error",
+      {
+        "endOfLine": "auto"
+      }
+    ],
+    // "react-hooks/exhaustive-deps": [0],
+    "prefer-const": "error",
+    "no-var": "error",
+    "no-console": "warn",
+    "no-debugger": "warn",
+    "react/jsx-no-literals": "error"
   },
   "settings": {
     "import/resolver": {
