@@ -1,11 +1,16 @@
 // libs
 import styled from 'styled-components';
 
+// UI & components
+import clearSearch from 'app/style/images/close.png';
+
 const SearchWrapper = styled.div`
   width:100%;
   height:100%;
   display: flex;
   align-items: center;
+  position: relative;
+  margin-left: 12px;
 }
 `;
 
@@ -28,8 +33,16 @@ const SearchIconWrapper = styled.img<{
   searchIconWidth: number;
   searchIconHeight: number;
 }>`
-  width: ${(props) => props.searchIconWidth || 'auto'};
-  height: ${(props) => props.searchIconHeight || 'auto'};
+  width: ${(props) => `${props.searchIconWidth}px` || 'auto'};
+  height: ${(props) => `${props.searchIconHeight}px` || 'auto'};
+`;
+
+const ClearSearch = styled.img`
+  width: 16px;
+  height: 16px;
+  position: absolute;
+  right: 48px;
+  cursor: pointer;
 `;
 
 type SearchInterface = {
@@ -43,6 +56,7 @@ type SearchInterface = {
   searchIconWidth: number;
   searchIconHeight: number;
   onSearchChange: (searchTerm: string) => void;
+  onSearchClear?: () => void;
 };
 
 const Search = ({
@@ -56,9 +70,14 @@ const Search = ({
   searchIconWidth,
   searchIconHeight,
   onSearchChange,
+  onSearchClear,
 }: SearchInterface) => {
-  const onChange = (e: React.FormEvent<HTMLInputElement>) => {
+  const onChange = (e: React.FormEvent<HTMLInputElement>): void => {
     onSearchChange(e.currentTarget.value);
+  };
+
+  const onClear = (): void => {
+    onSearchClear && onSearchClear();
   };
 
   return (
@@ -69,6 +88,9 @@ const Search = ({
         value={searchValue}
         id={searchInputId}
       />
+      {searchValue && (
+        <ClearSearch src={clearSearch} alt={'clearSearch'} onClick={onClear} />
+      )}
       <SearchIconWrapper
         src={searchIcon}
         alt={searchIconAlt}

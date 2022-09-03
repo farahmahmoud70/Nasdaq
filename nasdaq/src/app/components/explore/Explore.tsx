@@ -69,6 +69,10 @@ const Explore = () => {
     setSearchValue(val);
   };
 
+  const onSearchClear = () => {
+    setSearchValue('');
+  };
+
   const debouncedSearchTerm: string = useDebounce<string>(searchValue, 500);
 
   //  Effect for API call
@@ -99,6 +103,7 @@ const Explore = () => {
             searchPlaceholder={'Search on more tickers'}
             searchIconWidth={24}
             searchIconHeight={24}
+            onSearchClear={onSearchClear}
           />
         </ExploreHeaderWrapper>
       </ExploreFixedWrapper>
