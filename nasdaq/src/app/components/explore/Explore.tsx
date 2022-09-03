@@ -1,5 +1,14 @@
+// libs
+import { useEffect, useState } from 'react';
 import styled from 'styled-components';
-import ExploreGrid from './exploreGrid/ExploreGrid';
+
+// handlers
+import { useDebounce } from 'app/handlers/useDebounce';
+
+// UI & components
+import Search from 'app/components/common/search/Search';
+import ExploreGrid from 'app/components/explore/Explore';
+import searchIcon from 'app/style/images/exploreSearch.gif'
 
 const Wrapper = styled.div`
 width:100%;
@@ -9,6 +18,7 @@ flex-direction: column;
 align-items:center;
 overflow-y: hidden;
 position :relative;
+margin-bottom:10px;
 }
 `
 
@@ -49,12 +59,25 @@ box-shadow: 0px 1px 3px #91bed4;
 
 const Explore = () => {
 
+    const [searchValue, setSearchValue] = useState('')
+
+    const onSearchChange = (val: string) => { setSearchValue(val) }
+
+    const debouncedSearchTerm: string = useDebounce<string>(searchValue, 500);
+
+
+    //  Effect for API call
+    useEffect(() => {
+        // handle search from BE
+    }, [debouncedSearchTerm] //  Only call effect if debounced search term changes
+    );
     return (
         <Wrapper>
             <ExploreFixedWrapper>
 
                 <ExploreHeaderWrapper>
                     <GridTitleWrapper>{'Stocks Market'}</GridTitleWrapper>
+                    <Search searchIconTitle={'explore ticker search'} searchIconAlt='explore-search' searchIconId='explore-search-icon' searchInputId='explore-search-input' searchValue={searchValue} onSearchChange={onSearchChange} searchIcon={searchIcon} searchPlaceholder={'Search on more tickers'} />
 
                 </ExploreHeaderWrapper>
             </ExploreFixedWrapper>

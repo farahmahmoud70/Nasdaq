@@ -1,6 +1,11 @@
-import Text from '../common/text/Text';
+// libs
 import styled from 'styled-components';
-import nasdaqLogo from '../../style/images/nasdaq.png';
+
+// Ui & components
+import Text from 'app/components/common/text/Text';
+import nasdaqLogo from 'app/style/images/nasdaq.png';
+
+
 const Wrapper = styled.footer`
     width: 100%;
     height:auto;

@@ -1,9 +1,15 @@
+// libs
 import { useEffect } from 'react';
 import styled from 'styled-components';
-import { useActions, useAppState } from '../../../store/index'
-import Card from '../../common/card/Card';
 import { useNavigate } from 'react-router-dom';
-import InfiniteScroll from '../../common/infiniteScroll/InfiniteScroll';
+
+// overmind
+import { useActions, useAppState } from 'app/store';
+
+// UI & components
+import InfiniteScroll from 'app/components/common/infiniteScroll/InfiniteScroll';
+import Card from 'app/components/common/card/Card';
+
 
 const ContentWrapper = styled.div`
 height: 100%;
