@@ -38,4 +38,4 @@ body {
 ::-webkit-scrollbar-thumb:hover {
   background: #304269; 
 }
-`
+`;
