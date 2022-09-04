@@ -6,15 +6,16 @@ import { GlobalStyles } from './app/style/Global';
 import AppRoutes from './Routes';
 
 const App = () => {
-
-  return <>
-    <GlobalStyles />
-    <Layout>
-      <Header />
-      <AppRoutes />
-      <Footer />
-    </Layout>
-  </>
-}
+  return (
+    <>
+      <GlobalStyles />
+      <Layout>
+        <Header />
+        <AppRoutes />
+        <Footer />
+      </Layout>
+    </>
+  );
+};
 
 export default App;

@@ -60,7 +60,7 @@ const LogoBoxWrapper = styled.div`
 const LogoWrapper = styled.img`
   width: auto;
   height: auto;
-  max-width: 250px;
+  max-width: 80%;
 `;
 
 const InfoWrapper = styled.div`

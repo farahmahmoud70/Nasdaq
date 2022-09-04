@@ -5,7 +5,6 @@ import styled from 'styled-components';
 import Text from 'app/components/common/text/Text';
 import nasdaqLogo from 'app/style/images/nasdaq.png';
 
-
 const Wrapper = styled.footer`
     width: 100%;
     height:auto;
@@ -15,7 +14,7 @@ const Wrapper = styled.footer`
     justify-content: space-between;
     align-items: center;
     padding: 10px 8px;
-`
+`;
 
 const HWrapper = styled.div`
     width: 100%;
@@ -25,32 +24,40 @@ const HWrapper = styled.div`
     justify-content: center;
     align-items: space-between;
     padding: 8px 0px;
-`
+`;
 
 const NasdaqLogo = styled.img`
-    width: 120px;
-    margin-left: 12px;
-    `
-
+  width: 120px;
+  margin-left: 12px;
+`;
 
 const Footer = () => {
+  const currentYear: number = new Date().getFullYear();
+  return (
+    <Wrapper>
+      <HWrapper>
+        <NasdaqLogo src={nasdaqLogo} />
+        <Text align={'center'} color={'#FFFFFF'} pt={4} pleft={0} fs={14}>
+          {
+            'Nasdaq is a stock market app. It should show all stocks listed in Nasdaq exchange with their ticker, name, and details.'
+          }
+        </Text>
+      </HWrapper>
 
-    const currentYear: number = new Date().getFullYear();
-    return (
-        <Wrapper>
+      <HWrapper>
+        <Text align={'end'} color={'#FFFFFF'} pt={4} pleft={10} fs={14}>
+          {'Farah Mahmoud'}
+        </Text>
 
-            <HWrapper>
-                <NasdaqLogo src={nasdaqLogo} />
-                <Text align={'center'} color={'#FFFFFF'} pt={4} pleft={0} fs={14}>{'Nasdaq is a stock market app. It should show all stocks listed in Nasdaq exchange with their ticker, name, and details.'}</Text>
-            </HWrapper>
-
-            <HWrapper>
-                <Text align={'end'} color={'#FFFFFF'} pt={4} pleft={10} fs={14}>{'Farah Mahmoud'}</Text>
-
-                <Text align={'end'} color={'#FFFFFF'} pt={4} pleft={10} fs={14}>{`\u00a9 ${currentYear} Nasdaq. All Rights Reserved.`}</Text>
-            </HWrapper>
-
-        </Wrapper>
-    );
-}
+        <Text
+          align={'end'}
+          color={'#FFFFFF'}
+          pt={4}
+          pleft={10}
+          fs={14}
+        >{`\u00a9 ${currentYear} Nasdaq. All Rights Reserved.`}</Text>
+      </HWrapper>
+    </Wrapper>
+  );
+};
 export default Footer;
