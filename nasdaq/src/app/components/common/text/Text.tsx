@@ -18,7 +18,7 @@ const TextStyle = styled.div<{
 `;
 
 interface TextInterface {
-  children?: any;
+  children: string;
   bold?: boolean;
   color: string;
   align: string;
