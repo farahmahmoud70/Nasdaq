@@ -6,6 +6,7 @@ export interface StateStocks {
 export interface State {
   stocks: StateStocks[];
   stockSearchRes: StateStocks[];
+  isStockSearchRes?: boolean;
   isLoading: boolean;
   nextUrl?: string;
   isStocksNextUrl: boolean;

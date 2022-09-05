@@ -7,8 +7,9 @@ import { useDebounce } from 'app/handlers/useDebounce';
 
 // UI & components
 import Search from 'app/components/common/search/Search';
-import searchIcon from 'app/style/images/exploreSearch.png';
+import Text from 'app/components/common/text/Text';
 import ExploreGrid from './exploreGrid/ExploreGrid';
+import searchIcon from 'app/style/images/exploreSearch.png';
 
 // overmind
 import { useActions, useAppState } from 'app/store';
@@ -79,14 +80,21 @@ const Explore = () => {
   useEffect(
     () => {
       // handle search from BE
-      if (debouncedSearchTerm) stockActions.stockSearch(debouncedSearchTerm);
+      if (debouncedSearchTerm) {
+        stockActions.stockSearch(debouncedSearchTerm);
+      }
 
       // clear search result if the debounceSearchTerm was empty while there are stock search results
-      if (!debouncedSearchTerm && stocks.stockSearchRes.length)
+      if (
+        !debouncedSearchTerm &&
+        (stocks.stockSearchRes.length || stocks.isStockSearchRes)
+      ) {
         stockActions.clearStockSearchRes();
+      }
     },
     [debouncedSearchTerm] //  Only call effect if debounced search term changes
   );
+
   return (
     <Wrapper>
       <ExploreFixedWrapper>
@@ -109,7 +117,18 @@ const Explore = () => {
       </ExploreFixedWrapper>
 
       <ExploreGridWrapper>
-        <ExploreGrid />
+        {stocks.isStockSearchRes ? (
+          <Text
+            bold
+            color="#F26101"
+            align="center"
+            pleft={0}
+            fs={16}
+            pt={20}
+          >{`No available stock to be shown in the Search Result For the key "${debouncedSearchTerm}"`}</Text>
+        ) : (
+          <ExploreGrid />
+        )}
       </ExploreGridWrapper>
     </Wrapper>
   );

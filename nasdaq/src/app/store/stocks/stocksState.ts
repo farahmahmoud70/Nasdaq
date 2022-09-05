@@ -7,6 +7,7 @@ export const state: State = {
   nextUrl: '',
   nextSearchUrl: '',
   stockSearchRes: [],
+  isStockSearchRes: false,
   isStocksNextUrl: derived((state: State) => (state.nextUrl ? true : false)),
   currDisplayedStocks: derived((state: State) =>
     state.stockSearchRes.length ? state.stockSearchRes : state.stocks

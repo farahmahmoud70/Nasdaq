@@ -29,7 +29,7 @@ interface TextInterface {
 
 const Text = ({
   bold = false,
-  color = 'black',
+  color,
   align,
   pt,
   pleft,
