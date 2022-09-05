@@ -6,8 +6,8 @@ import {
   createReactionHook,
 } from 'overmind-react';
 import { namespaced } from 'overmind/config';
-import * as stocks from 'app/store/stocks/stocksIndex';
-import * as stockDetails from 'app/store/stockDetails/stockDetailsIndex';
+import * as stocks from 'app/overmind/stocks/stocksIndex';
+import * as stockDetails from 'app/overmind/stockDetails/stockDetailsIndex';
 
 export const config = namespaced({
   stocks,

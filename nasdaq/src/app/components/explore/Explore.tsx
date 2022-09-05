@@ -14,7 +14,7 @@ import searchIcon from 'app/style/images/exploreSearch.png';
 import loadingIcon from 'app/style/images/loading.gif';
 
 // overmind
-import { useActions, useAppState } from 'app/store';
+import { useActions, useAppState } from 'app/overmind';
 
 const Wrapper = styled.div`
 width:100%;

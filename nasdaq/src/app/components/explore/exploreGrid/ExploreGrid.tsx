@@ -4,7 +4,7 @@ import { useNavigate } from 'react-router-dom';
 import styled from 'styled-components';
 
 // overmind
-import { useActions, useAppState } from 'app/store';
+import { useActions, useAppState } from 'app/overmind';
 
 // UI & components
 import InfiniteScroll from 'app/components/common/infiniteScroll/InfiniteScroll';

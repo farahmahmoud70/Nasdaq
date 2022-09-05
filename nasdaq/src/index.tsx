@@ -5,7 +5,7 @@ import { Provider } from 'overmind-react';
 import { BrowserRouter } from 'react-router-dom';
 
 // overmind
-import { config, devTool } from '../src/app/store/index';
+import { config, devTool } from './app/overmind/index';
 
 import reportWebVitals from './reportWebVitals';
 

@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import { useNavigate } from 'react-router-dom';
 
 // overmind
-import { useAppState } from 'app/store';
+import { useAppState } from 'app/overmind';
 
 // UI & components
 import nasdaqLogo from 'app/style/images/nasdaq.png';
