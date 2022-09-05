@@ -34,8 +34,8 @@ const StockDetailsWrapper = styled.div`
   overflow-y: auto;
 `;
 
-const SecWrapper = styled.div`
-  flex: 1 1 auto;
+const SecWrapper = styled.div<{ flexBasis?: string | undefined }>`
+  flex: ${(props) => `1 1 ${props.flexBasis ? props.flexBasis : 'auto'} `};
   height: auto;
   padding: 12px 40px 0px;
   border-left: 1px solid #d9e8f5;
@@ -151,7 +151,7 @@ const StockDetails = () => {
             </div>
           </InfoWrapper>
         </SecWrapper>
-        <SecWrapper>
+        <SecWrapper flexBasis="50%">
           <InfoWrapper>
             <SecTitleWrapper>{'Statistics'}</SecTitleWrapper>
             {stockDetailsState.tickerDailyDetailsError ? (

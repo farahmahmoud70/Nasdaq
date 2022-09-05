@@ -4,6 +4,7 @@ import styled from 'styled-components';
 interface CardInterface {
   stock: { ticker: string; fullName: string };
   onCardClick: (ticker: string) => void;
+  id: string;
 }
 
 const CardContentWrapper = styled.div`
@@ -65,12 +66,12 @@ const ContentWrapper = styled.div`
   text-overflow: ellipsis;
 `;
 
-const Card = ({ stock, onCardClick }: CardInterface) => {
+const Card = ({ stock, onCardClick, id }: CardInterface) => {
   const onShowDetailsClick = () => {
     onCardClick?.(stock.ticker);
   };
   return (
-    <CardContentWrapper>
+    <CardContentWrapper id={id}>
       <StockInfoWrapper>
         <div>
           <TitleWrapper>{'Thicker'}</TitleWrapper>

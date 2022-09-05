@@ -50,6 +50,7 @@ const Footer = () => {
           pleft={0}
           fs={14}
           dataTestID={'footer-description'}
+          id={'footer-description'}
         >
           {
             'Nasdaq is a stock market app. It should show all stocks listed in Nasdaq exchange with their ticker, name, and details.'
@@ -58,7 +59,14 @@ const Footer = () => {
       </HWrapper>
 
       <HWrapper>
-        <Text align={'end'} color={'#FFFFFF'} pt={4} pleft={10} fs={14}>
+        <Text
+          id={'footer-name'}
+          align={'end'}
+          color={'#FFFFFF'}
+          pt={4}
+          pleft={10}
+          fs={14}
+        >
           {'Farah Mahmoud'}
         </Text>
 
@@ -69,6 +77,7 @@ const Footer = () => {
           pleft={10}
           fs={14}
           dataTestID={'footer-copyrights'}
+          id={'footer-copyrights'}
         >{`\u00a9 ${currentYear} Nasdaq. All Rights Reserved.`}</Text>
       </HWrapper>
     </Wrapper>

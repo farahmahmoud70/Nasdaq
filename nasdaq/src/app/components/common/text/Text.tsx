@@ -26,6 +26,7 @@ interface TextInterface {
   pleft: number;
   fs: number;
   dataTestID?: string;
+  id: string;
 }
 
 const Text = ({
@@ -37,6 +38,7 @@ const Text = ({
   fs,
   children,
   dataTestID,
+  id,
 }: TextInterface) => {
   return (
     <TextStyle
@@ -47,6 +49,7 @@ const Text = ({
       pleft={pleft}
       fs={fs}
       data-testid={dataTestID}
+      id={id}
     >
       {children}
     </TextStyle>
