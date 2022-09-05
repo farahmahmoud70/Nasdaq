@@ -1,0 +1,5 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Header shows correct snapshot for the header logo styled component 1`] = `Promise {}`;
+
+exports[`Header shows correct snapshot for the header wrapper styled component 1`] = `Promise {}`;

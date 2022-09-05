@@ -26,8 +26,14 @@ const NasdaqLogo = styled.img`
 
 const Header = () => {
   return (
-    <Wrapper>
-      <NasdaqLogo src={nasdaqLogo} />
+    <Wrapper data-testid={'header-wrapper'}>
+      <NasdaqLogo
+        src={nasdaqLogo}
+        data-testid={'header-logo'}
+        id={'header-logo'}
+        title={'header-logo'}
+        alt={'header-logo'}
+      />
     </Wrapper>
   );
 };

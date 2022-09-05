@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Footer shows correct footer copyrights 1`] = `Promise {}`;
+
+exports[`Footer shows correct footer description 1`] = `Promise {}`;
+
+exports[`Footer shows correct snapshot for the footer Hwrapper styled component 1`] = `Promise {}`;
+
+exports[`Footer shows correct snapshot for the footer logo styled component 1`] = `Promise {}`;
+
+exports[`Footer shows correct snapshot for the footer wrapper styled component 1`] = `Promise {}`;
