@@ -57,10 +57,13 @@ const LogoBoxWrapper = styled.div`
   background-color: #304269;
 `;
 
-const LogoWrapper = styled.img`
+const LogoWrapper = styled.img<{
+  maxWidth?: string | null;
+}>`
   width: auto;
   height: auto;
-  max-width: 80%;
+  max-width: ${(props) => props.maxWidth || '40%'};
+  max-height: 50%;
 `;
 
 const InfoWrapper = styled.div`
@@ -124,6 +127,10 @@ const StockDetails = () => {
   const onBackBtnClick = () => {
     navigate(-1);
   };
+  const logoInfo = stockDetailsState.branding?.logo_url
+    ? stockDetailsState.ticker
+    : 'nasdaq-logo';
+
   return (
     <Wrapper>
       <BackBtnWrapper>
@@ -137,6 +144,10 @@ const StockDetails = () => {
           <LogoBoxWrapper>
             <LogoWrapper
               src={stockDetailsState.branding?.logo_url || nasdaqLogo}
+              id={logoInfo}
+              alt={logoInfo}
+              title={logoInfo}
+              maxWidth={stockDetailsState.branding?.logo_url ? null : '250px'}
             />
           </LogoBoxWrapper>
           <InfoWrapper>
