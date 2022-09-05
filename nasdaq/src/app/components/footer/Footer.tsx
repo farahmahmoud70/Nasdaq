@@ -34,10 +34,23 @@ const NasdaqLogo = styled.img`
 const Footer = () => {
   const currentYear: number = new Date().getFullYear();
   return (
-    <Wrapper>
-      <HWrapper>
-        <NasdaqLogo src={nasdaqLogo} />
-        <Text align={'center'} color={'#FFFFFF'} pt={4} pleft={0} fs={14}>
+    <Wrapper data-testid={'footer-wrapper'}>
+      <HWrapper data-testid={'footer-Hwrapper'}>
+        <NasdaqLogo
+          src={nasdaqLogo}
+          data-testid={'footer-logo'}
+          id={'footer-logo'}
+          title={'footer-logo'}
+          alt={'footer-logo'}
+        />
+        <Text
+          align={'center'}
+          color={'#FFFFFF'}
+          pt={4}
+          pleft={0}
+          fs={14}
+          dataTestID={'footer-description'}
+        >
           {
             'Nasdaq is a stock market app. It should show all stocks listed in Nasdaq exchange with their ticker, name, and details.'
           }
@@ -55,6 +68,7 @@ const Footer = () => {
           pt={4}
           pleft={10}
           fs={14}
+          dataTestID={'footer-copyrights'}
         >{`\u00a9 ${currentYear} Nasdaq. All Rights Reserved.`}</Text>
       </HWrapper>
     </Wrapper>
