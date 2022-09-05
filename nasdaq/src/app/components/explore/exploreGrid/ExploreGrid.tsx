@@ -65,6 +65,7 @@ const ExploreGrid = () => {
             (stock: { ticker: string; fullName: string }, index: number) => (
               <Card
                 key={`${stock.ticker}_${index}`}
+                id={`${stock.ticker}_${index}`}
                 stock={stock}
                 onCardClick={onCardClick}
               />

@@ -8,8 +8,10 @@ import { useDebounce } from 'app/handlers/useDebounce';
 // UI & components
 import Search from 'app/components/common/search/Search';
 import Text from 'app/components/common/text/Text';
+import Loader from 'app/components/common/loader/Loader';
 import ExploreGrid from './exploreGrid/ExploreGrid';
 import searchIcon from 'app/style/images/exploreSearch.png';
+import loadingIcon from 'app/style/images/loading.gif';
 
 // overmind
 import { useActions, useAppState } from 'app/store';
@@ -63,6 +65,7 @@ const ExploreFixedWrapper = styled.div`
 const Explore = () => {
   const stockActions = useActions().stocks;
   const stocks = useAppState().stocks;
+  const stockDetails = useAppState().stockDetails;
 
   const [searchValue, setSearchValue] = useState('');
 
@@ -117,8 +120,19 @@ const Explore = () => {
       </ExploreFixedWrapper>
 
       <ExploreGridWrapper>
+        {(stocks.isLoading || stockDetails.isLoading) && (
+          <Loader
+            loaderIcon={loadingIcon}
+            id={'loader'}
+            title={'loader'}
+            dataTestID={'loader'}
+            alt={'loader'}
+          />
+        )}
+
         {stocks.isStockSearchRes ? (
           <Text
+            id={'no-search-res'}
             bold
             color="#F26101"
             align="center"
