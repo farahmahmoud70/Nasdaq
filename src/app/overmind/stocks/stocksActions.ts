@@ -37,6 +37,7 @@ export const stockSearch = async (context: Context, searchTerm: string) => {
   if (!stockSearchRes.data.results.length) {
     context.actions.stocks._hasSearchRes(true);
   } else {
+    context.state.stocks.stockSearchRes = [];
     stockSearchRes.data.results.forEach(
       (stock: { ticker: string; name: string }) =>
         context.state.stocks.stockSearchRes.push({
