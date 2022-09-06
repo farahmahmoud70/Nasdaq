@@ -1,6 +1,6 @@
 describe('Nasdaq E2E test - explore page', () => {
   beforeEach(() => {
-    cy.visit('http://localhost:3000/');
+    cy.visit('https://farahmahmoud70.github.io/Nasdaq/');
   });
   it('Show layout successfully', () => {
     cy.location('pathname').should('include', '/');
