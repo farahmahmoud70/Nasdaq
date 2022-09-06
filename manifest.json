@@ -1,6 +1,7 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "short_name": "Nasdaq",
+  "name": "Nasdaq stock market app",
+  "description": "Nasdaq is a stock market app. It should show all stocks listed in Nasdaq exchange with their ticker, name, and details",
   "icons": [
     {
       "src": "favicon.ico",
