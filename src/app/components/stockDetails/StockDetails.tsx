@@ -131,9 +131,14 @@ const StockDetails = () => {
     ? stockDetailsState.ticker
     : 'nasdaq-logo';
 
+  const hasAdditionalInfo =
+    !stockDetailsState.homepage_url &&
+    !stockDetailsState.sic_description &&
+    !stockDetailsState.description;
+
   return (
-    <Wrapper>
-      <BackBtnWrapper>
+    <Wrapper data-testid={'stock-details-wrapper'}>
+      <BackBtnWrapper data-testid={'stock-back-btn-wrapper'}>
         <BackBtn src={backArrow} onClick={onBackBtnClick} />
         <BackBtnTitleWrapper>
           {'Continue Exploring, press the back btn'}
@@ -148,9 +153,10 @@ const StockDetails = () => {
               alt={logoInfo}
               title={logoInfo}
               maxWidth={stockDetailsState.branding?.logo_url ? null : '250px'}
+              data-testid={'stock-logo'}
             />
           </LogoBoxWrapper>
-          <InfoWrapper>
+          <InfoWrapper data-testid={'stock-info-wrapper'}>
             <SecTitleWrapper>{'Stock Info'}</SecTitleWrapper>
             <div>
               <TitleWrapper>{'Ticker:'}</TitleWrapper>
@@ -163,11 +169,19 @@ const StockDetails = () => {
           </InfoWrapper>
         </SecWrapper>
         <SecWrapper flexBasis="50%">
-          <InfoWrapper>
+          <InfoWrapper
+            data-testid={'stock-statistics-wrapper'}
+            data-error={
+              stockDetailsState.tickerDailyDetailsError ? 'error' : ''
+            }
+          >
             <SecTitleWrapper>{'Statistics'}</SecTitleWrapper>
             {stockDetailsState.tickerDailyDetailsError ? (
               <div>
-                <ContentWrapper errorColor={'#B22222'}>
+                <ContentWrapper
+                  errorColor={'#B22222'}
+                  data-testid={'statistics-error-wrapper'}
+                >
                   {
                     'There is no available statistics about the stock for the previous day'
                   }
@@ -201,12 +215,15 @@ const StockDetails = () => {
             )}
           </InfoWrapper>
 
-          <InfoWrapper>
+          <InfoWrapper
+            data-testid={'stock-additional-info-wrapper'}
+            data-error={
+              hasAdditionalInfo ? 'additional-info-error-wrapper' : ''
+            }
+          >
             <SecTitleWrapper>{'Additional Info..'}</SecTitleWrapper>
 
-            {!stockDetailsState.homepage_url &&
-            !stockDetailsState.sic_description &&
-            !stockDetailsState.description ? (
+            {hasAdditionalInfo ? (
               <div>
                 <ContentWrapper errorColor={'#B22222'}>
                   {'There is no available additional Info about the stock'}

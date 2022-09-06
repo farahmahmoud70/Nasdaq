@@ -9,7 +9,7 @@ const App = () => {
   return (
     <>
       <GlobalStyles />
-      <Layout>
+      <Layout data-testid={'layout'}>
         <Header />
         <AppRoutes />
         <Footer />

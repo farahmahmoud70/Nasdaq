@@ -99,10 +99,12 @@ const Explore = () => {
   );
 
   return (
-    <Wrapper>
+    <Wrapper data-testid="explore-page">
       <ExploreFixedWrapper>
         <ExploreHeaderWrapper>
-          <GridTitleWrapper>{'Stocks Market'}</GridTitleWrapper>
+          <GridTitleWrapper data-testid="explore-title">
+            {'Stocks Market'}
+          </GridTitleWrapper>
           <Search
             searchIconTitle={'explore ticker search'}
             searchIconAlt="explore-search"
@@ -115,6 +117,9 @@ const Explore = () => {
             searchIconWidth={24}
             searchIconHeight={24}
             onSearchClear={onSearchClear}
+            dataTestID={'explore-search'}
+            searchInputTestID={'explore-search-input'}
+            clearInputTestID={'clear-explore-search-input'}
           />
         </ExploreHeaderWrapper>
       </ExploreFixedWrapper>
@@ -139,6 +144,7 @@ const Explore = () => {
             pleft={0}
             fs={16}
             pt={20}
+            dataTestID={'no-search-res'}
           >{`No available stock to be shown in the Search Result For the key "${debouncedSearchTerm}"`}</Text>
         ) : (
           <ExploreGrid />

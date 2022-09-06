@@ -55,6 +55,9 @@ type SearchInterface = {
   searchIconTitle: string;
   searchIconWidth: number;
   searchIconHeight: number;
+  dataTestID?: string;
+  clearInputTestID?: string;
+  searchInputTestID?: string;
   onSearchChange: (searchTerm: string) => void;
   onSearchClear?: () => void;
 };
@@ -69,6 +72,9 @@ const Search = ({
   searchIconTitle,
   searchIconWidth,
   searchIconHeight,
+  dataTestID,
+  clearInputTestID,
+  searchInputTestID,
   onSearchChange,
   onSearchClear,
 }: SearchInterface) => {
@@ -81,15 +87,21 @@ const Search = ({
   };
 
   return (
-    <SearchWrapper>
+    <SearchWrapper data-testid={dataTestID}>
       <SearchInputWrapper
         placeholder={searchPlaceholder}
         onChange={onChange}
         value={searchValue}
         id={searchInputId}
+        data-testid={searchInputTestID}
       />
       {searchValue && (
-        <ClearSearch src={clearSearch} alt={'clearSearch'} onClick={onClear} />
+        <ClearSearch
+          src={clearSearch}
+          alt={'clearSearch'}
+          onClick={onClear}
+          data-testid={clearInputTestID}
+        />
       )}
       <SearchIconWrapper
         src={searchIcon}
