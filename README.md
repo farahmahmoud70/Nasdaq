@@ -5,7 +5,7 @@ The app is a stock market app. It should show all stocks listed in Nasdaq exchan
 
 - UI: React + React DOM + Styled component
 - State Management: overmind + axios
-- Design: color pallet https://color.adobe.com/Copy-of-Corporate-Orange-Blue-color-theme-11136534/
+- Design: color palette https://color.adobe.com/Copy-of-Corporate-Orange-Blue-color-theme-11136534/
 
 ## APP Sections
 
