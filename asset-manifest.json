@@ -1,17 +1,17 @@
 {
   "files": {
     "main.css": "/Nasdaq/static/css/main.1ef3a49a.css",
-    "main.js": "/Nasdaq/static/js/main.1c7b8af2.js",
+    "main.js": "/Nasdaq/static/js/main.e35fe9dd.js",
     "static/js/787.dcd6e11b.chunk.js": "/Nasdaq/static/js/787.dcd6e11b.chunk.js",
     "static/media/loading.gif": "/Nasdaq/static/media/loading.2ead42150ebbf241b225.gif",
     "static/media/nasdaq.png": "/Nasdaq/static/media/nasdaq.e827eae0528322af3e3c.png",
     "index.html": "/Nasdaq/index.html",
     "main.1ef3a49a.css.map": "/Nasdaq/static/css/main.1ef3a49a.css.map",
-    "main.1c7b8af2.js.map": "/Nasdaq/static/js/main.1c7b8af2.js.map",
+    "main.e35fe9dd.js.map": "/Nasdaq/static/js/main.e35fe9dd.js.map",
     "787.dcd6e11b.chunk.js.map": "/Nasdaq/static/js/787.dcd6e11b.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.1ef3a49a.css",
-    "static/js/main.1c7b8af2.js"
+    "static/js/main.e35fe9dd.js"
   ]
 }
