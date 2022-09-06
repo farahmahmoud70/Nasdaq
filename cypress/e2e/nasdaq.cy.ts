@@ -73,7 +73,7 @@ describe('Nasdaq E2E test - explore page', () => {
         `[data-testid="card-btn-${idValue}"]`,
         'Show more details..'
       ).click();
-      cy.location('pathname').should('include', '/stockDetails');
+      cy.location('pathname').should('include', '/StockDetails');
     });
   });
 });
@@ -91,7 +91,7 @@ describe('Nasdaq E2E test - stock details page', () => {
         `[data-testid="card-btn-${idValue}"]`,
         'Show more details..'
       ).click();
-      cy.location('pathname').should('include', '/stockDetails');
+      cy.location('pathname').should('include', '/StockDetails');
     });
   });
 

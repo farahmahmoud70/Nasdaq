@@ -5,8 +5,8 @@ const AppRoutes = () => {
   return (
     <Routes>
       <Route path="/" element={<Explore />} />
-      <Route path="/stocks" element={<Explore />} />
-      <Route path="/stockDetails" element={<StockDetails />} />
+      <Route path="/Nasdaq" element={<Explore />} />
+      <Route path="/StockDetails" element={<StockDetails />} />
     </Routes>
   );
 };

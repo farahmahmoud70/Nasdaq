@@ -42,7 +42,7 @@ const ExploreGrid = () => {
 
   useEffect(() => {
     if (!isStockDetailsLoading && isStockDetailsFulFilled) {
-      navigate('/stockDetails');
+      navigate('/StockDetails');
     }
   }, [isStockDetailsLoading, isStockDetailsFulFilled]);
 
