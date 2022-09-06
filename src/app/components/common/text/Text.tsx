@@ -18,7 +18,7 @@ const TextStyle = styled.div<{
 `;
 
 interface TextInterface {
-  children: string;
+  children: React.ReactNode;
   bold?: boolean;
   color: string;
   align: string;

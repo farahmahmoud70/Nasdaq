@@ -13,7 +13,7 @@ export type Props = {
   isLoading: boolean;
   hasMoreData: boolean;
   loadOnMount: boolean;
-  children: any;
+  children: React.ReactNode;
   dataTestID?: string;
 };
 
