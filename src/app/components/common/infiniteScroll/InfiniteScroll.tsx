@@ -14,6 +14,7 @@ export type Props = {
   hasMoreData: boolean;
   loadOnMount: boolean;
   children: any;
+  dataTestID?: string;
 };
 
 const isBottom = (ref: React.RefObject<HTMLDivElement>) => {
@@ -33,6 +34,7 @@ const InfiniteScroll = ({
   hasMoreData,
   loadOnMount,
   children,
+  dataTestID,
 }: Props) => {
   const [initialLoad, setInitialLoad] = useState(true);
   const contentRef = useRef<HTMLDivElement>(null);
@@ -60,7 +62,9 @@ const InfiniteScroll = ({
   }, [isLoading, hasMoreData]);
 
   return (
-    <InfiniteScrollWrapper ref={contentRef}>{children}</InfiniteScrollWrapper>
+    <InfiniteScrollWrapper ref={contentRef} data-testid={dataTestID}>
+      {children}
+    </InfiniteScrollWrapper>
   );
 };
 

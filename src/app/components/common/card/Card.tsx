@@ -71,7 +71,7 @@ const Card = ({ stock, onCardClick, id }: CardInterface) => {
     onCardClick?.(stock.ticker);
   };
   return (
-    <CardContentWrapper id={id}>
+    <CardContentWrapper id={id} data-testid={`card-${id}`}>
       <StockInfoWrapper>
         <div>
           <TitleWrapper>{'Thicker'}</TitleWrapper>
@@ -87,7 +87,10 @@ const Card = ({ stock, onCardClick, id }: CardInterface) => {
       </StockInfoWrapper>
 
       <ShowDetailsBtnWrapper>
-        <ShowDetailsBtn onClick={onShowDetailsClick}>
+        <ShowDetailsBtn
+          onClick={onShowDetailsClick}
+          data-testid={`card-btn-${id}`}
+        >
           {'Show more details..'}
         </ShowDetailsBtn>
       </ShowDetailsBtnWrapper>

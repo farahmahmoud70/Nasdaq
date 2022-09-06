@@ -59,8 +59,9 @@ const ExploreGrid = () => {
         isLoading={isStocksLoading}
         onBottomHit={loadMoreStocks}
         loadOnMount={false}
+        dataTestID={'infinite-scroll'}
       >
-        <ContentWrapper>
+        <ContentWrapper data-testid={'cards-wrapper'}>
           {stocks.currDisplayedStocks.map(
             (stock: { ticker: string; fullName: string }, index: number) => (
               <Card
