@@ -1,0 +1,5 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Explore page shows correct snapshot for the explore title styled component 1`] = `Promise {}`;
+
+exports[`Explore page shows correct snapshot for the explore wrapper styled component 1`] = `Promise {}`;
